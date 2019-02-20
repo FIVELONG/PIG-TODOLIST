@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "at-calendar-day-list": "../ui/day-list/index",
+    "at-calendar-date-list": "../ui/date-list/index"
+  }
+}

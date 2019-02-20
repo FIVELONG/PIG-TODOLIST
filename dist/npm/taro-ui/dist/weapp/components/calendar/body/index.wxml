@@ -1,0 +1,20 @@
+<block>
+    <block wx:if="{{!isSwiper}}">
+        <view class="{{_$anonymousState__temp}}">
+            <at-calendar-day-list __triggerObserer="{{ _triggerObserer }}"></at-calendar-day-list>
+            <view class="main__body body">
+                <view class="body__slider body__slider--now">
+                    <at-calendar-date-list list="{{listGroup[1].list}}" __triggerObserer="{{ _triggerObserer }}" bindonclick="funPrivatetdbpK" bindonlongclick="funPrivateuNboM" __fn_onClick="{{true}}" __fn_onLongClick="{{true}}"></at-calendar-date-list>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="{{anonymousState__temp2}}" wx:else>
+        <at-calendar-day-list __triggerObserer="{{ _triggerObserer }}"></at-calendar-day-list>
+        <swiper circular="{{true}}" current="{{1}}" skip-hidden-item-layout="{{true}}" class="{{anonymousState__temp3}}" bindchange="handleChange" vertical="{{isVertical}}" bindanimationfinish="handleAnimateFinish" bindtouchend="handleSwipeTouchEnd" bindtouchstart="handleSwipeTouchStart">
+            <swiper-item wx:key="$original.value" item-id="{{item.$loopState__temp5}}" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="key">
+                <at-calendar-date-list list="{{item.$original.list}}" __triggerObserer="{{ _triggerObserer }}" bindonclick="funPrivatetdbpK" bindonlongclick="funPrivateuNboM" __fn_onClick="{{true}}" __fn_onLongClick="{{true}}"></at-calendar-date-list>
+            </swiper-item>
+        </swiper>
+    </view>
+</block>

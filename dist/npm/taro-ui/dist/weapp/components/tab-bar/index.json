@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "at-badge": "../badge/index",
+    "at-icon": "../icon/index"
+  }
+}

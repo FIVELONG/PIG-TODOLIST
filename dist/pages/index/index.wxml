@@ -1,0 +1,99 @@
+<block>
+    <view>
+        <at-tabs className="page_index" __triggerObserer="{{ _triggerObserer }}" swipeable="{{FALSEBOOLEN}}" current="{{current}}" tabList="{{tabs}}" bindonclick="handleClick" __fn_onClick="{{true}}" data-e-onclick-so="this">
+            <at-tabs-pane current="{{current}}" __triggerObserer="{{ _triggerObserer }}" index="{{0}}">
+                <view class="todo-main" style="padding-bottom: 80px">
+                    <view class="date-pannel">
+                        <at-calendar bindondayclick="chooseDate" __triggerObserer="{{ _triggerObserer }}" __fn_onDayClick="{{true}}" data-e-ondayclick-so="this"></at-calendar>
+                    </view>
+                    <block>
+                        <block wx:if="{{backlogList.length}}">
+                            <block wx:if="{{tabs.length >= 2}}">
+                                <block wx:if="{{backlogList.length}}">
+                                    <at-checkbox options="{{backlogList}}" __triggerObserer="{{ _triggerObserer }}" selectedList="{{checkedList}}" bindonchange="handleChange" __fn_onChange="{{true}}" data-e-onchange-so="this"></at-checkbox>
+                                </block>
+                            </block>
+                        </block>
+                        <block wx:else>
+                            <block>
+                                <block wx:if="{{tabs.length >= 2}}">
+                                    <view style="padding-top: 30px;text-align: center">
+                                        <view style="margin-bottom: 30px">
+                                            <at-icon value="bell" __triggerObserer="{{ _triggerObserer }}" size="50" color="rgba(52, 72, 94, 0.5)"></at-icon>
+                                        </view><text>{{(current == 0 ? '今天没有TAGS' : '没有MEMO') + '，快去添加吧~~~'}}</text>
+                                    </view>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </view>
+            </at-tabs-pane>
+            <at-tabs-pane current="{{current}}" __triggerObserer="{{ _triggerObserer }}" index="{{1}}">
+                <view style="padding-bottom: 80px">
+                    <block>
+                        <block wx:if="{{memoList.length}}">
+                            <block wx:if="{{tabs.length >= 2}}">
+                                <block wx:if="{{memoList && memoList.length}}">
+                                    <at-list __triggerObserer="{{ _triggerObserer }}">
+                                        <at-list-item wx:key="$loopState__temp2" __triggerObserer="{{ _triggerObserer }}" title="{{item.$original.title}}" extraText="查看详情" arrow="right" iconInfo="{{item.$loopState__temp4}}" bindonclick="setMemoMain" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="index" __fn_onClick="{{true}}" data-e-onclick-so="this" data-e-onclick-a-a="{{item.$original.title}}" data-e-onclick-a-b="{{item.$original.content}}"></at-list-item>
+                                    </at-list>
+                                </block>
+                            </block>
+                        </block>
+                        <block wx:else>
+                            <block>
+                                <block wx:if="{{tabs.length >= 2}}">
+                                    <view style="padding-top: 30px;text-align: center">
+                                        <view style="margin-bottom: 30px">
+                                            <at-icon value="bell" __triggerObserer="{{ _triggerObserer }}" size="50" color="rgba(52, 72, 94, 0.5)"></at-icon>
+                                        </view><text>{{(current == 0 ? '今天没有TAGS' : '没有MEMO') + '，快去添加吧~~~'}}</text>
+                                    </view>
+                                </block>
+                            </block>
+                        </block>
+                    </block>
+                </view>
+            </at-tabs-pane>
+        </at-tabs>
+        <view style="{{anonymousState__temp6}}" class="todo-add-btn" bindtap="linkAdd" data-e-tap-so="this">
+            <at-icon value="add-circle" __triggerObserer="{{ _triggerObserer }}" size="50" color="rgba(52, 72, 94, 0.5)"></at-icon>
+        </view>
+        <at-float-layout isOpened="{{showAddContentPanel}}" __triggerObserer="{{ _triggerObserer }}" title="{{memoTitle}}" bindonclose="handleClose" __fn_onClose="{{true}}" data-e-onclose-so="this">
+            <view style="margin-bottom:20px">
+                <at-button bindonclick="copyBtn" __triggerObserer="{{ _triggerObserer }}" type="primary" size="small" style="margin-right:20px" __fn_onClick="{{true}}" data-e-onclick-so="this">复制</at-button>
+                <at-button bindonclick="editBtn" __triggerObserer="{{ _triggerObserer }}" type="primary" size="small" style="margin-right:20px" __fn_onClick="{{true}}" data-e-onclick-so="this">编辑</at-button>
+                <at-button bindonclick="deleteBtn" __triggerObserer="{{ _triggerObserer }}" type="primary" size="small" __fn_onClick="{{true}}" data-e-onclick-so="this">删除</at-button>
+            </view>{{memoContent}}</at-float-layout>
+        <view style="{{anonymousState__temp7}}">
+            <at-tab-bar fixed="{{true}}" __triggerObserer="{{ _triggerObserer }}" tabList="{{tabs}}" bindonclick="handleClick" current="{{current}}" __fn_onClick="{{true}}" data-e-onclick-so="this"></at-tab-bar>
+        </view>
+        <at-message __triggerObserer="{{ _triggerObserer }}"></at-message>
+        <block wx:if="{{tabs.length >= 2}}">
+            <block wx:if="{{showModalAdd}}">
+                <at-modal bindonclose="handleCloseAdd" __triggerObserer="{{ _triggerObserer }}" isOpened="{{showModalAdd}}" __fn_onClose="{{true}}" data-e-onclose-so="this">
+                    <at-modal-header __triggerObserer="{{ _triggerObserer }}">
+                        <view class="addPanel-title">{{'添加' + (current == 0 ? 'TAGS' : 'MEMO')}}</view>
+                    </at-modal-header>
+                    <at-modal-content __triggerObserer="{{ _triggerObserer }}">
+                        <view style="margin-bottom: 20px">
+                            <at-input disabled="{{current == 0 ? true : false}}" __triggerObserer="{{ _triggerObserer }}" title="标题" type="text" placeholder="选填" value="{{titleValue}}" bindonchange="handleTitleChange" __fn_onChange="{{true}}" data-e-onchange-so="this"></at-input>
+                        </view>
+                        <view style="margin-bottom: 20px">
+                            <at-textarea showConfirmBar="{{TRUEBOOLEN}}" __triggerObserer="{{ _triggerObserer }}" value="{{backlogValue}}" bindonchange="handleBacklogChange" maxLength="{{30}}" placeholder="{{_$anonymousState__temp}}" __fn_onChange="{{true}}" data-e-onchange-so="this"></at-textarea>
+                        </view>
+                    </at-modal-content>
+                    <at-modal-action __triggerObserer="{{ _triggerObserer }}">
+                        <view class="addPanel-btn clearfix">
+                            <view class="addPanel-btn-cancel">
+                                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="handleCancelAdd" __fn_onClick="{{true}}" data-e-onclick-so="this">取消</at-button>
+                            </view>
+                            <view class="addPanel-btn-confirm">
+                                <at-button type="primary" __triggerObserer="{{ _triggerObserer }}" bindonclick="subBacklog" __fn_onClick="{{true}}" data-e-onclick-so="this">确定</at-button>
+                            </view>
+                        </view>
+                    </at-modal-action>
+                </at-modal>
+            </block>
+        </block>
+    </view>
+</block>

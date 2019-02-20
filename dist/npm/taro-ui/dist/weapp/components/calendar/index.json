@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "at-calendar-controller": "./controller/index",
+    "at-calendar-body": "./body/index"
+  }
+}

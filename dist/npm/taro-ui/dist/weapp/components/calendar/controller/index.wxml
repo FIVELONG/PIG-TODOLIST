@@ -1,0 +1,12 @@
+<block>
+    <view class="at-calendar__controller controller">
+        <block wx:if="{{!hideArrow}}">
+            <view class="{{anonymousState__temp}}" bindtap="funPrivatepNplU" data-e-tap-so="this" data-e-tap-a-a="{{isMinMonth}}"></view>
+        </block>
+        <picker class="controller__info" mode="date" fields="month" end="{{maxDateValue}}" start="{{minDateValue}}" bindchange="funPrivateVNfmI" value="{{anonymousState__temp2}}"><text>{{anonymousState__temp3}}</text>
+        </picker>
+        <block wx:if="{{!hideArrow}}">
+            <view class="{{anonymousState__temp4}}" bindtap="funPrivateWXpPC" data-e-tap-so="this" data-e-tap-a-a="{{isMaxMonth}}"></view>
+        </block>
+    </view>
+</block>

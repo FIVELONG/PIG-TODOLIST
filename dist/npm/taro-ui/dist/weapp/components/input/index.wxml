@@ -1,0 +1,23 @@
+<block>
+    <view class="{{anonymousState__temp}}" style="{{anonymousState__temp2}}">
+        <view class="{{anonymousState__temp3}}" bindtap="onClick" data-e-tap-so="this">
+            <block wx:if="{{title}}">
+                <label class="at-input__title" for="{{name}}">{{title}}</label>
+            </block>
+            <input class="at-input__input" id="{{name}}" name="{{name}}" type="{{type}}" placeholder-style="{{placeholderStyle}}" placeholder-class="{{anonymousState__temp4}}" placeholder="{{placeholder}}" cursor-spacing="{{cursorSpacing}}" maxlength="{{maxlength}}" auto-focus="{{autoFocus}}" focus="{{focus}}" value="{{value}}" confirm-type="{{confirmType}}" cursor="{{cursor}}" selection-start="{{selectionStart}}" selection-end="{{selectionEnd}}" adjust-position="{{adjustPosition}}" disabled="{{disabled}}" bindinput="onInput" bindfocus="onFocus" bindblur="onBlur" bindconfirm="onConfirm" data-e-input-so="this" data-e-focus-so="this" data-e-blur-so="this" data-e-confirm-so="this" />
+            <block wx:if="{{clear && value}}">
+                <view class="at-input__icon" bindtouchstart="clearValue" data-e-touchstart-so="this">
+                    <at-icon customStyle="{{anonymousState__temp5}}" __triggerObserer="{{ _triggerObserer }}" value="close-circle" color="#ccc"></at-icon>
+                </view>
+            </block>
+            <block wx:if="{{error}}">
+                <view class="at-input__icon" bindtouchstart="onErrorClick" data-e-touchstart-so="this">
+                    <at-icon customStyle="{{anonymousState__temp6}}" __triggerObserer="{{ _triggerObserer }}" value="alert-circle" color="#FF4949"></at-icon>
+                </view>
+            </block>
+            <view class="at-input__children">
+                <slot></slot>
+            </view>
+        </view>
+    </view>
+</block>

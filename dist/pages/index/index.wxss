@@ -1,0 +1,41 @@
+
+.page_index .todo-main {
+  text-align: center;
+}
+.page_index .todo-main .date-pannel {
+  padding: 50rpx;
+}
+.todo-add-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 150rpx;
+}
+.addPanel-title {
+  padding-top: 20rpx;
+  text-align: center;
+}
+.addPanel-btn {
+  padding: 0 20rpx 20rpx;
+}
+.addPanel-btn .addPanel-btn-cancel {
+  float: left;
+  width: 45%;
+}
+.addPanel-btn .addPanel-btn-confirm {
+  float: right;
+  width: 45%;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}

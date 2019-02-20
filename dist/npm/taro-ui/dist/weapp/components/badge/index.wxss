@@ -1,0 +1,77 @@
+
+@charset "UTF-8";
+/**
+ * Default Theme
+ */
+/**
+ * Mixes a color with white. It's different from lighten()
+ *
+ * @param {color} $color
+ * @param {number (percentage)} $percent [The amout of white to be mixed in]
+ * @return {color}
+ *
+ * @example
+ *   .element {
+ *     background-color: tint(#6ecaa6 , 40%);
+ *   }
+ *
+ *   // CSS Output
+ *   .element {
+ *     background-color: #a8dfc9;
+ *   }
+ */
+/* The Color of O2Team Brand */
+/* Color */
+/* Color Palette */
+/* Text Color */
+/* Link */
+/* 背景色 */
+/* 边框颜色 */
+/* 图标颜色 */
+/* Border Radius */
+/* 透明度 */
+/* Font */
+/* Line Height */
+/* 水平间距 */
+/* 垂直间距 */
+/* 图标尺寸 */
+/* z-index */
+/* timing function */
+/**
+ * CSS cubic-bezier timing functions
+ * http://bourbon.io/docs/#timing-functions
+ */
+.at-badge {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle; }
+  .at-badge__dot {
+    position: absolute;
+    right: -6rpx;
+    top: -6rpx;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #FF4949;
+    -webkit-box-shadow: 0 4rpx 8rpx 0 rgba(233, 59, 61, 0.2);
+            box-shadow: 0 4rpx 8rpx 0 rgba(233, 59, 61, 0.2); }
+  .at-badge__num {
+    font-size: 20rpx;
+    color: #fff;
+    height: 28rpx;
+    line-height: 28rpx;
+    position: absolute;
+    right: -6PX;
+    top: -14rpx;
+    -webkit-transform: translate(50%, 0);
+        -ms-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+    padding: 0 10rpx;
+    border-radius: 14rpx 14rpx 14rpx 0;
+    overflow: hidden;
+    background: #FF4949;
+    -webkit-box-shadow: 0 4rpx 8rpx 0 rgba(233, 59, 61, 0.2);
+            box-shadow: 0 4rpx 8rpx 0 rgba(233, 59, 61, 0.2);
+    z-index: 1; }

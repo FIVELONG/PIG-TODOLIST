@@ -1,0 +1,6 @@
+<block>
+    <view class="{{anonymousState__temp}}">
+        <at-calendar-controller minDate="{{minDate}}" __triggerObserer="{{ _triggerObserer }}" maxDate="{{maxDate}}" hideArrow="{{hideArrow}}" monthFormat="{{monthFormat}}" generateDate="{{generateDate}}" bindonpremonth="handleClickPreMonth" bindonnextmonth="handleClickNextMonth" bindonselectdate="handleSelectDate" __fn_onPreMonth="{{true}}" __fn_onNextMonth="{{true}}" __fn_onSelectDate="{{true}}"></at-calendar-controller>
+        <at-calendar-body marks="{{marks}}" __triggerObserer="{{ _triggerObserer }}" format="{{format}}" minDate="{{minDate}}" maxDate="{{maxDate}}" isSwiper="{{isSwiper}}" isVertical="{{isVertical}}" selectedDate="{{selectedDate}}" selectedDates="{{selectedDates}}" generateDate="{{generateDate}}" bindondayclick="handleDayClick" bindonswipemonth="setGenerateDate" bindonlongclick="handleDayLongClick" __fn_onDayClick="{{true}}" __fn_onSwipeMonth="{{true}}" __fn_onLongClick="{{true}}"></at-calendar-body>
+    </view>
+</block>

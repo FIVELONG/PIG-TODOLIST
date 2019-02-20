@@ -1,0 +1,20 @@
+{
+  "usingComponents": {
+    "at-icon": "../../npm/taro-ui/dist/weapp/components/icon/index",
+    "at-checkbox": "../../npm/taro-ui/dist/weapp/components/checkbox/index",
+    "at-list": "../../npm/taro-ui/dist/weapp/components/list/index",
+    "at-list-item": "../../npm/taro-ui/dist/weapp/components/list/item/index",
+    "at-modal": "../../npm/taro-ui/dist/weapp/components/modal/index",
+    "at-modal-content": "../../npm/taro-ui/dist/weapp/components/modal/content/index",
+    "at-input": "../../npm/taro-ui/dist/weapp/components/input/index",
+    "at-textarea": "../../npm/taro-ui/dist/weapp/components/textarea/index",
+    "at-button": "../../npm/taro-ui/dist/weapp/components/button/index",
+    "at-tabs": "../../npm/taro-ui/dist/weapp/components/tabs/index",
+    "at-tabs-pane": "../../npm/taro-ui/dist/weapp/components/tabs-pane/index",
+    "at-calendar": "../../npm/taro-ui/dist/weapp/components/calendar/index",
+    "at-float-layout": "../../npm/taro-ui/dist/weapp/components/float-layout/index",
+    "at-tab-bar": "../../npm/taro-ui/dist/weapp/components/tab-bar/index",
+    "at-message": "../../npm/taro-ui/dist/weapp/components/message/index"
+  },
+  "navigationBarTitleText": "猪维乐丨日历"
+}

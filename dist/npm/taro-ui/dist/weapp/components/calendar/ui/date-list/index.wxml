@@ -1,0 +1,18 @@
+<block>
+    <block wx:if="{{!list || list.length === 0}}">
+        <view></view>
+    </block>
+    <view class="at-calendar__list flex" wx:else>
+        <view wx:key="index" bindtap="handleClick" bindlongpress="handleLongClick" class="{{item.$loopState__temp2}}" wx:for="{{loopArray0}}" wx:for-item="item" wx:for-index="index" data-e-tap-so="this" data-e-tap-a-a="{{item.$original}}" data-e-longpress-so="this" data-e-longpress-a-a="{{item.$original}}">
+            <view class="flex__item-container">
+                <view class="container-text">{{item.$original.text}}</view>
+            </view>
+            <view class="flex__item-extra extra">
+                <block wx:if="{{item.$original.marks && item.$original.marks.length > 0}}">
+                    <view class="extra-marks"><text wx:key="key" class="mark" wx:for="{{item.$original.marks}}" wx:for-item="mark" wx:for-index="key"></text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>
